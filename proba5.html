@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+
+        const sum = (x, y) => x + y;
+        const sub = (x, y) => x - y;
+        const mtp = (x, y) => x * y;
+        const dvs = (x, y) => x / y;
+
+        /**
+         * Функция складывает, вычитает, умножает или делит два переданных ей аргумента.
+         * @arg1 {number} первый аргумент.
+         * @arg2 {number} второй аргумент.
+         * @operation {string} какой тип операции надо выполнить.
+         * @returns {number} возврат результата операции.
+         */
+        function mathOperation(arg1, arg2, operation) {
+            let result = null;
+            switch (operation) {
+                case "сложить": result = sum(arg1, arg2); break;
+                case "вычесть": result = sub(arg1, arg2); break;
+                case "умножить": result = mtp(arg1, arg2); break;
+                case "делить": result = dvs(arg1, arg2); break;
+                //для внутреннего спокойствия
+                default: alert("Что-то пошло не так..."); break;
+            }
+            return result;
+        }
+
+        let a = parseInt(prompt("Введите первое число:"));
+        let b = parseInt(prompt("Введите второе число:"));
+        let c = prompt("Введите одно из названий операции (сложить, вычесть, умножить, делить):");
+
+        alert(mathOperation(a, b, c));
+
+    </script>
+</body>
+
+</html>
