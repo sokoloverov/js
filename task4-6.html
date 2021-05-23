@@ -9,7 +9,17 @@
 </head>
 
 <body>
-    <script src="app2.js">
+    <script>
+        'use strict';
+        let hill = 'x';
+        for (let i = 0; i < 21; i++) {
+            if (i == 0) {
+                console.log(hill);
+                continue;
+            }
+            hill = hill + 'x';
+            console.log(hill);
+        }
     </script>
 </body>
 
