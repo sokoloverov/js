@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Если задача в достижении результата, кажется получилось сделать без математических формул.
+Проверял вводя все, что угодно, вроде, работает.
+Попробуйте сами... -->
+
+    <script>
+        'use strict';
+
+        class MakeObjectFromNumber {
+            constructor(units, tens, hundreds) {
+                this.units = units;
+                this.tens = tens;
+                this.hundreds = hundreds;
+            }
+            analyse(number) {
+
+                number = String(number);
+                number = number.split('');
+                if (number.length > 3) {
+                    console.log('Зачем вы ввели число больше 999 или число с дробной частью, а может и не число?');
+                    return;
+                }
+                for (let value of number) {
+                    if (value == '0' || value == '1' || value == '2' || value == '3' || value == '4' || value == '5' || value == '6' || value == '7' || value == '8' || value == '9') {
+                        continue;
+                    } else {
+                        console.log('Вы ввели не число. Ай-ай-яй.');
+                        return;
+                    }
+                }
+
+                if (number.length > 2) {
+                    this.hundreds = number.shift();
+                } else this.hundreds = 0;
+                this.hundreds = Number(this.hundreds);
+
+                if (number.length > 1) {
+                    this.tens = number.shift();
+                } else this.tens = 0;
+                this.tens = Number(this.tens);
+
+                this.units = Number(number);
+            }
+        }
+
+        let proba = new MakeObjectFromNumber();
+
+        let valueTeacher = prompt();
+        proba.analyse(valueTeacher);
+
+        console.log(proba);
+
+    </script>
+</body>
+
+</html>
