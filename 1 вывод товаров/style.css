@@ -1,0 +1,10 @@
+.products {
+    overflow: hidden;
+    margin-top: 40px;
+    display: flex;
+}
+
+.product {
+    float: left;
+    margin-right: 20px;
+}
